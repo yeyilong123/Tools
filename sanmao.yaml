@@ -118,23 +118,12 @@ Proxy:
 
 
 # 配置开始
-- name: "V2ray节点的主机测试"
-  type: vmess
-  server: v2rayssr.com
-  port: 443
-  uuid: 5b8098e0-c95d-4c74-b5d5-4a330969c8cb
-  alterId: 2
-  cipher: auto
-  tls: true
-  network: ws
-  ws-path: /v2rayssrcom/
-  Host: v2rayssr.com
 
-- name: "Trojan节点的主机测试"
+- name: "三毛机"
   type: trojan
-  server: www.v2rayssr.com
+  server: fq.yylnp.com
   port: 443
-  password: v2rayssr.com
+  password: yeyilong
 
  
 ###############################################################配置分割线
@@ -146,8 +135,7 @@ Proxy Group:
 - name: "自动节点选择"
   type: url-test
   proxies:
-    - "V2ray节点的主机测试"
-    - "Trojan节点的主机测试"
+    - "三毛机"
   url: 'http://www.gstatic.com/generate_204'
   interval: 300
 
@@ -156,8 +144,7 @@ Proxy Group:
   type: select
   proxies:
     - "自动节点选择"
-    - "V2ray节点的主机测试"
-    - "Trojan节点的主机测试"
+    - "三毛机"
 # 白名单模式 PROXY，黑名单模式 DIRECT
 - name: "Final"
   type: select
@@ -175,15 +162,13 @@ Proxy Group:
   type: select
   proxies:
     - "PROXY"
-    - "V2ray节点的主机测试"
-    - "Trojan节点的主机测试"
+    - "三毛机"
 # 大陆流媒体面向港澳台限定服务
 - name: "HKMTMedia"
   type: select
   proxies:
     - "DIRECT"
-    - "V2ray节点的主机测试"
-    - "Trojan节点的主机测试"
+    - "三毛机"
 # 运营商及声名狼藉网站劫持
 - name: "Hijacking"
   type: select
